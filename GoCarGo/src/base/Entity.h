@@ -1,7 +1,12 @@
 #pragma once
 
+#include <SFML/Graphics.hpp>
+
 class Entity
 {
+
+	Sprite sprite;
+
 public:
 
 	virtual ~Entity();
