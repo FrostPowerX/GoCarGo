@@ -1,7 +1,17 @@
 #pragma once
 
+#include <vector>
+
+#include "base/Entity.h"
+
+using namespace std;
+
 class Scene
 {
+protected:
+
+	vector<Entity*> allEntities;
+
 public:
 
 	virtual ~Scene() = 0;
