@@ -2,7 +2,8 @@
 
 void GameLoop::Init()
 {
-	currentScene->Init();
+	if (currentScene)
+		currentScene->Init();
 }
 
 void GameLoop::Input()
@@ -44,7 +45,6 @@ void GameLoop::ChangeScene(int index)
 
 		currentScene->Init();
 	}
-
 }
 
 GameLoop::GameLoop()
@@ -53,7 +53,7 @@ GameLoop::GameLoop()
 	height = 600;
 
 	title = "GoCarGo";
-	
+
 	window.create(VideoMode(width, height), title);
 
 	currentScene = nullptr;
