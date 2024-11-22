@@ -9,8 +9,14 @@ namespace game
 		activePower = Power::None;
 		distance = 0;
 		this->feul = feul;
+
 	}
 
+	void Car::Input(){}
+	void Car::ChangeLane()
+	{
+		isLeftLane = !isLeftLane;
+	}
 
 
 }

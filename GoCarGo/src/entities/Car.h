@@ -11,6 +11,7 @@ namespace game
 		float feul;
 		float distance;
 		Power activePower;
+		bool isLeftLane = true;
 
 		void Input() override;
 
