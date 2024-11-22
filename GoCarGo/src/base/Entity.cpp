@@ -1,5 +1,7 @@
 #include "Entity.h"
 
+Entity::~Entity() = default;
+
 void Entity::Draw(RenderWindow& window)
 {
 	window.draw(sprite);
