@@ -29,6 +29,12 @@ namespace game
 		}
 		return false;
 	}
+	void Car::GetHit()
+	{
+		const float feulPenalty = 20.f;
+		feul = (feul - feulPenalty < 0 ? 0 : feul - feulPenalty);
+	}
+
 
 
 }
