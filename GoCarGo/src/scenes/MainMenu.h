@@ -13,14 +13,11 @@ namespace game
 
     public:
 
-        MainMenu();
-        ~MainMenu();
-
         void Init() override;
 
-        void Input() override;
-        void Update() override;
-        void Draw() override;
+        //void Input() override;
+        //void Update() override;
+        //void Draw(RenderWindow& window) override;
 
         void DeInit() override;
 
