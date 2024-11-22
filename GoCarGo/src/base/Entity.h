@@ -19,7 +19,7 @@ namespace game
 
 	public:
 
-		Entity(const std::string textureName, int frames, int frameIndex);
+		Entity(const std::string& textureName, int frames, int frameIndex);
 		virtual ~Entity();
 
 		virtual void Input() = 0;

@@ -4,7 +4,7 @@
 
 namespace game
 {
-	Entity::Entity(const std::string textureName, int frames, int frameIndex)
+	Entity::Entity(const std::string& textureName, int frames, int frameIndex)
 	{
 		sprite.setTexture(SpriteManager::Instance().GetSprite(textureName)->texture);
 
