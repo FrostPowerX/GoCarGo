@@ -15,9 +15,9 @@ namespace game
 
         void Init() override;
 
-        //void Input() override;
-        //void Update() override;
-        //void Draw(RenderWindow& window) override;
+        void Input() override;
+        void Update() override;
+        void Draw(RenderWindow& window) override;
 
         void DeInit() override;
 
