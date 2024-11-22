@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\entities\Car.cpp" />
     <ClCompile Include="src\GameLoop.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\managers\SoundManager.cpp" />
@@ -20,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="src\base\Entity.h" />
     <ClInclude Include="src\base\Singleton.h" />
+    <ClInclude Include="src\entities\Car.h" />
     <ClInclude Include="src\GameLoop.h" />
     <ClInclude Include="src\managers\SoundManager.h" />
     <ClInclude Include="src\managers\SpriteManager.h" />
