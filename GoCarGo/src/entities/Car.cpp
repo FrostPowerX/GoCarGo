@@ -7,6 +7,7 @@
 namespace game
 {
 	const float Car::maxFuel = 100.f;
+	const float Car::fuelConsumption = 1.f;
 
 	Car::Car(const Texture& texture, int width, int height, float fuel)
 	{
@@ -36,12 +37,16 @@ namespace game
 	void Car::GetHit()
 	{
 		const float fuelPenalty = 20.f;
-		fuel = (fuel - fuelPenalty < 0 ? 0 : fuel - fuelPenalty);
+		RemoveFuel(fuelPenalty);
 	}
 
 	void Car::AddFuel(float toAdd)
 	{
 		fuel = (fuel + toAdd > maxFuel? fuel : fuel + toAdd);
+	}
+	void Car::RemoveFuel(float toRemove)
+	{
+		fuel = (fuel - toRemove < 0 ? 0 : fuel - toRemove);
 	}
 
 	void Car::Input(int joystick)
@@ -59,7 +64,7 @@ namespace game
 			if (inputDir > FLT_EPSILON)
 			{
 				// AccelBackground()
-				fuel -= fuelPenalty * MyTime::Instance().GetdeltaTime();
+				RemoveFuel(fuelPenalty * MyTime::Instance().GetdeltaTime());
 			}
 			else if (inputDir < -FLT_EPSILON)
 			{
@@ -75,7 +80,7 @@ namespace game
 			else if (Keyboard::isKeyPressed(Keyboard::W))
 			{
 				// AccelBackground()
-				fuel -= fuelPenalty * MyTime::Instance().GetdeltaTime();
+				RemoveFuel(fuelPenalty * MyTime::Instance().GetdeltaTime());
 			}
 			else if (Keyboard::isKeyPressed(Keyboard::S))
 			{

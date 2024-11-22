@@ -9,6 +9,7 @@ namespace game
 	{
 	private:
 		static const float maxFuel;
+		static const float fuelConsumption;
 
 		float fuel;
 		float distance;
@@ -24,6 +25,7 @@ namespace game
 		void GetHit();
 
 		void AddFuel(float toAdd);
+		void RemoveFuel(float toRemove);
 
 	public:
 
