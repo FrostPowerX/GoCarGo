@@ -20,11 +20,11 @@ public:
 
 	virtual void Input() = 0;
 	virtual void Update() = 0;
-	virtual void Draw() = 0;
+	virtual void Draw();
 
-	virtual Vector2f GetPosition() = 0;
-	virtual Vector2f GetSize() = 0;
-	virtual FloatRect GetRect() = 0;
+	virtual Vector2f GetPosition();
+	virtual Vector2f GetSize();
+	virtual FloatRect GetRect();
 
 };
 
