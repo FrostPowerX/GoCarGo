@@ -5,26 +5,32 @@
 #define GETTER_SETTER(type, field) inline type Get##field() { return (field);}; \
 				inline void Set##field(type Var) { (field) = Var;};
 
+#include <string>
 
 using namespace sf;
 
-class Entity
+namespace game
 {
-protected:
+	class Entity
+	{
+	protected:
 
-	Sprite sprite;
+		Sprite sprite;
 
-public:
+	public:
 
-	virtual ~Entity();
+		Entity(const std::string textureName, int frames, int frameIndex);
+		virtual ~Entity();
 
-	virtual void Input() = 0;
-	virtual void Update() = 0;
-	virtual void Draw(RenderWindow& window);
+		virtual void Input() = 0;
+		virtual void Update() = 0;
+		virtual void Draw(RenderWindow& window);
 
-	virtual Vector2f GetPosition();
-	virtual Vector2f GetSize();
-	virtual FloatRect GetRect();
+		virtual Vector2f GetPosition();
+		virtual Vector2f GetSize();
+		virtual FloatRect GetRect();
 
-};
+		virtual void SetRotation(float angle);
+	};
+}
 

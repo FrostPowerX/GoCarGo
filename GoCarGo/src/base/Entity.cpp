@@ -1,23 +1,46 @@
 #include "Entity.h"
 
-Entity::~Entity() = default;
+#include "managers/SpriteManager.h"
 
-void Entity::Draw(RenderWindow& window)
+namespace game
 {
-	window.draw(sprite);
-}
+	Entity::Entity(const std::string textureName, int frames, int frameIndex)
+	{
+		sprite.setTexture(SpriteManager::Instance().GetSprite(textureName)->texture);
 
-Vector2f Entity::GetPosition()
-{
-	return {sprite.getGlobalBounds().left, sprite.getGlobalBounds().top};
-}
+		sf::IntRect newRect;
+		newRect = sprite.getTextureRect();
 
-Vector2f Entity::GetSize()
-{
-	return {sprite.getGlobalBounds().width, sprite.getGlobalBounds().height};
-}
+		newRect.width /= frames;
+		newRect.left = (frameIndex * newRect.width);
 
-FloatRect Entity::GetRect()
-{
-	return sprite.getGlobalBounds();
+		sprite.setTextureRect(newRect);
+
+	}
+
+	Entity::~Entity() = default;
+
+	void Entity::Draw(RenderWindow& window)
+	{
+		window.draw(sprite);
+	}
+
+	Vector2f Entity::GetPosition()
+	{
+		return { sprite.getGlobalBounds().left, sprite.getGlobalBounds().top };
+	}
+
+	Vector2f Entity::GetSize()
+	{
+		return { sprite.getGlobalBounds().width, sprite.getGlobalBounds().height };
+	}
+
+	FloatRect Entity::GetRect()
+	{
+		return sprite.getGlobalBounds();
+	}
+	void Entity::SetRotation(float angle)
+	{
+		sprite.setRotation(angle);
+	}
 }
