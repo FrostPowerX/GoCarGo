@@ -31,6 +31,7 @@ namespace game
 		virtual FloatRect GetRect();
 
 		virtual void SetRotation(float angle);
+		virtual void SetFrame(int frameIndex);
 	};
 }
 

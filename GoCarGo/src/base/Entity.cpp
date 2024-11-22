@@ -14,6 +14,8 @@ namespace game
 		newRect.width /= frames;
 		newRect.left = (frameIndex * newRect.width);
 
+		sprite.setOrigin({ newRect.width * 0.5f, newRect.height * 0.5f });
+
 		sprite.setTextureRect(newRect);
 
 	}
@@ -39,8 +41,18 @@ namespace game
 	{
 		return sprite.getGlobalBounds();
 	}
+
 	void Entity::SetRotation(float angle)
 	{
 		sprite.setRotation(angle);
+	}
+
+	void Entity::SetFrame(int frameIndex)
+	{
+		sf::IntRect newRect;
+		newRect = sprite.getTextureRect();
+
+		newRect.left = (frameIndex * newRect.width);
+		sprite.setTextureRect(newRect);
 	}
 }
