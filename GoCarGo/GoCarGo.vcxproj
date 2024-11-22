@@ -14,6 +14,7 @@
     <ClCompile Include="src\GameLoop.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\managers\SoundManager.cpp" />
+    <ClCompile Include="src\managers\SpriteManager.cpp" />
     <ClCompile Include="src\scenes\Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -21,6 +22,7 @@
     <ClInclude Include="src\base\Singleton.h" />
     <ClInclude Include="src\GameLoop.h" />
     <ClInclude Include="src\managers\SoundManager.h" />
+    <ClInclude Include="src\managers\SpriteManager.h" />
     <ClInclude Include="src\scenes\Scene.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
