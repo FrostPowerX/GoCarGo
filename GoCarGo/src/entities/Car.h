@@ -11,14 +11,18 @@ namespace game
 		static const float maxFuel;
 		static const float fuelConsumption;
 
+
+		float speed;
 		float fuel;
 		float distance;
 
 		Power activePower;
 
+		Vector2f direction;
+
 		bool isLeftLane = true;
 
-		void Input() override;
+
 		void ChangeLane();
 
 		bool CheckCollision(Entity *other);
@@ -29,9 +33,10 @@ namespace game
 
 	public:
 
-		Car(const Texture& texture, int width, int height, float fuel);
+		Car(const std::string textureName, int frames, int frameIndex, float widthScale, float heightScale, float fuel);
 
-		void Input(int joystick = 0);
+		//void Input(int joystick = 0);
+		void Input() override;
 		void Update() override;
 
 		GETTER_SETTER(Power, activePower);
