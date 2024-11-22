@@ -68,8 +68,12 @@ namespace game
 		window.create(VideoMode(width, height), title);
 
 		MainMenu* menu = new MainMenu();
+		GamePlay* gamePlay = new GamePlay();
 
 		currentScene = menu;
+
+		scenes.push_back(menu);
+		scenes.push_back(gamePlay);
 
 		onLoop = true;
 	}

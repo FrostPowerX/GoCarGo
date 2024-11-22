@@ -8,6 +8,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "scenes/MainMenu.h"
+#include "scenes/GamePlay.h"
 
 using namespace std;
 using namespace sf;
