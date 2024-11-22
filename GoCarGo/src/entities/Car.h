@@ -8,24 +8,26 @@ namespace game
 	class Car : public Entity
 	{
 	private:
-		float feul;
+		static const float maxFuel;
+
+		float fuel;
 		float distance;
+
 		Power activePower;
+
 		bool isLeftLane = true;
 
 		void Input() override;
-
 		void ChangeLane();
 
 		bool CheckCollision(Entity *other);
-
 		void GetHit();
 
-		void AddFeul();
+		void AddFuel(float toAdd);
 
 	public:
 
-		Car(const Texture& texture, int width, int height, float feul);
+		Car(const Texture& texture, int width, int height, float fuel);
 
 		void Input(int joystick = 0);
 		void Update() override;
