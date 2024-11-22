@@ -1,5 +1,7 @@
 #include "GameLoop.h"
 
+#include "utilities/MyTime.h"
+
 namespace game
 {
 	void GameLoop::Init()
@@ -10,26 +12,27 @@ namespace game
 
 	void GameLoop::Input()
 	{
-		currentScene->Input();
+		//currentScene->Input();
 	}
 
 	void GameLoop::Update()
 	{
-		currentScene->Update();
+		//currentScene->Update();
+		cout << MyTime::Instance().GetdeltaTime();
 	}
 
 	void GameLoop::Draw()
 	{
 		window.clear();
 
-		currentScene->Draw();
+		//currentScene->Draw();
 
 		window.display();
 	}
 
 	void GameLoop::DeInit()
 	{
-		currentScene->DeInit();
+		//currentScene->DeInit();
 	}
 
 	void GameLoop::AddScene(Scene* scene)
@@ -82,14 +85,25 @@ namespace game
 			if (Keyboard::isKeyPressed(Keyboard::Escape))
 				onLoop = false;
 
-			if (currentScene)
+			if (!currentScene)
 			{
+				MyTime::Instance().Start();
+
+				Event event;
+				while (window.pollEvent(event))
+				{
+					if (event.type == Event::Closed)
+						window.close();
+				}
+
 				Input();
 				Update();
 				Draw();
+
+				MyTime::Instance().Stop();
 			}
 			else
-				cout << "Error: Scene not seted or not exist.\n";
+				cout << "Error: Scene not setted or not exist.\n";
 		}
 
 		DeInit();
