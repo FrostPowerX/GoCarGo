@@ -5,12 +5,12 @@
 #define GETTER_SETTER(type, field) inline type Get##field() { return (field);}; \
 				inline void Set##field(type Var) { (field) = Var;};
 
-
 using namespace sf;
 
 class Entity
 {
 protected:
+
 	Sprite sprite;
 
 public:
@@ -20,5 +20,6 @@ public:
 	virtual void Input() = 0;
 	virtual void Update() = 0;
 	virtual void Draw() = 0;
+
 };
 
