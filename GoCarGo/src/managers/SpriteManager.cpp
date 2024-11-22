@@ -35,7 +35,11 @@ namespace game
 
 		void SpriteManager::LoadSprites()
 		{
-			
+			AddSprite("Cars", "res/Cars.png");
+			AddSprite("FuelTank", "res/FuelTank.png");
+			AddSprite("GasCan", "res/GasCan.png");
+			AddSprite("Road", "res/Road.png");
+			AddSprite("Button", "res/ButtonPlay.png");
 		}
 
 }
