@@ -2,10 +2,16 @@
 
 #include "utilities/MyTime.h"
 
+#include "managers/SpriteManager.h"
+#include "managers/SoundManager.h"
+
 namespace game
 {
 	void GameLoop::Init()
 	{
+		SoundManager::Instance().LoadSounds();
+		SpriteManager::Instance().LoadSprites();
+
 		if (currentScene)
 			currentScene->Init();
 	}
