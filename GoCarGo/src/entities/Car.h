@@ -17,7 +17,7 @@ namespace game
 
 		void ChangeLane();
 
-		void CheckCollision();
+		bool CheckCollision(Entity *other);
 
 		void GetHit();
 
