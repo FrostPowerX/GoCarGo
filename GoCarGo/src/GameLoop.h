@@ -32,6 +32,8 @@ namespace game
 
 		vector<Scene*> scenes;
 
+		Event event;
+
 		bool onLoop;
 
 		void Init();
@@ -52,6 +54,8 @@ namespace game
 		void Play();
 
 		void ChangeScene(int scene);
+
+		Event GetEvent();
 	};
 }
 

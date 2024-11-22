@@ -4,6 +4,7 @@
 
 #include "entities/Player.h"
 
+
 namespace game
 {
     class GamePlay :
@@ -12,6 +13,8 @@ namespace game
     private:
 
         Player* player;
+
+        bool isPause;
 
     public:
 

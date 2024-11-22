@@ -58,6 +58,11 @@ namespace game
 		}
 	}
 
+	Event GameLoop::GetEvent()
+	{
+		return event;
+	}
+
 	GameLoop::GameLoop()
 	{
 		width = 800;
@@ -75,6 +80,8 @@ namespace game
 		scenes.push_back(menu);
 		scenes.push_back(gamePlay);
 
+		event;
+		
 		onLoop = true;
 	}
 
@@ -101,7 +108,6 @@ namespace game
 			{
 				MyTime::Instance().Start();
 
-				Event event;
 				while (window.pollEvent(event))
 				{
 					if (event.type == Event::Closed)

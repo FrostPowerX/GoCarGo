@@ -15,6 +15,7 @@
     <ClCompile Include="src\base\Entity.cpp" />
     <ClCompile Include="src\entities\Car.cpp" />
     <ClCompile Include="src\entities\Button.cpp" />
+    <ClCompile Include="src\entities\Player.cpp" />
     <ClCompile Include="src\GameLoop.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\managers\SoundManager.cpp" />
@@ -22,7 +23,6 @@
     <ClCompile Include="src\scenes\GamePlay.cpp" />
     <ClCompile Include="src\scenes\MainMenu.cpp" />
     <ClCompile Include="src\utilities\MyTime.cpp" />
-    <ClCompile Include="src\entities\Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\entities\Button.h" />
@@ -85,17 +85,17 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)libs\SFML-2.5.1\include;$(SolutionDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libs\SFML-2.6.2\include;$(SolutionDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)libs\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)libs\SFML-2.6.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>"$(SolutionDir)scripts\build.bat" "$(SolutionDir)" "$(TargetDir)" $(TargetName) SFML-2.5.1 "-d" 0</Command>
+      <Command>"$(SolutionDir)scripts\build.bat" "$(SolutionDir)" "$(TargetDir)" $(TargetName) SFML-2.6.2 "-d" 0</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -106,7 +106,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)libs\SFML-2.5.1\include;$(SolutionDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libs\SFML-2.6.2\include;$(SolutionDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
@@ -115,14 +115,14 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)libs\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)libs\SFML-2.6.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
     <PostBuildEvent>
       <Command>"$(SolutionDir)scripts\build.bat" "$(SolutionDir)" "$(TargetDir)" $(TargetName) SFML-2.5.1 "" 1</Command>
       <Command>"$(SolutionDir)scripts\build.bat" "$(SolutionDir)" "$(TargetDir)" $(TargetName) SFML-2.5.1 "-d" 0</Command>
       <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <Command>"$(SolutionDir)scripts\build.bat" "$(SolutionDir)" "$(TargetDir)" $(TargetName) SFML-2.5.1 "" 1</Command>
+      <Command>"$(SolutionDir)scripts\build.bat" "$(SolutionDir)" "$(TargetDir)" $(TargetName) SFML-2.6.2 "" 1</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
