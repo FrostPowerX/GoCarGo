@@ -2,17 +2,19 @@
 
 #include "entities/Car.h"
 
+#include "GameLoop.h"
+
 void game::MainMenu::Init()
 {
-	Car* cacho = new Car("Cars", 5, 0, 2.f, 2.f, 500.f, 100.f);
 
-	allEntities.push_back(cacho);
 }
 
 void game::MainMenu::Input()
 {
 	Scene::Input();
 
+	if (Keyboard::isKeyPressed(Keyboard::Space))
+		GameLoop::Instance().ChangeScene(1);
 }
 
 void game::MainMenu::Update()
@@ -29,5 +31,5 @@ void game::MainMenu::Draw(RenderWindow& window)
 
 void game::MainMenu::DeInit()
 {
-
+	Scene::DeInit();
 }
