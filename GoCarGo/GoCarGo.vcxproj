@@ -14,12 +14,6 @@
     <ClCompile Include="src\base\Scene.cpp" />
     <ClCompile Include="src\base\Entity.cpp" />
     <ClCompile Include="src\entities\Car.cpp" />
-<<<<<<< HEAD
-    <ClCompile Include="src\base\Entity.cpp" />
-    <ClCompile Include="src\entities\Car.cpp" />
-=======
-    <ClCompile Include="src\base\Scene.cpp" />
->>>>>>> origin/main
     <ClCompile Include="src\GameLoop.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\managers\SoundManager.cpp" />

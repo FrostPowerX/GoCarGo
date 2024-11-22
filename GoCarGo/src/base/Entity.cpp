@@ -2,7 +2,7 @@
 
 void Entity::Draw()
 {
-	RenderWindow::draw(sprite);
+	// RenderWindow::draw(sprite);
 }
 
 Vector2f Entity::GetPosition()
