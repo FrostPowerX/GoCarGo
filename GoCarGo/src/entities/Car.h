@@ -31,6 +31,10 @@ namespace game
 		void Update() override;
 		void Draw() override;
 
+		Vector2f GetPosition() override;
+		Vector2f GetSize() override;
+		Rect<float>& GetRect() override;
+
 		GETTER_SETTER(Power, activePower);
 
 	};
