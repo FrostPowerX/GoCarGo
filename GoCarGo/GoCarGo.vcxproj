@@ -15,12 +15,10 @@
     <ClCompile Include="src\base\Entity.cpp" />
     <ClCompile Include="src\entities\Car.cpp" />
     <ClCompile Include="src\entities\Button.cpp" />
-    <ClCompile Include="src\entities\Player.cpp" />
     <ClCompile Include="src\GameLoop.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\managers\SoundManager.cpp" />
     <ClCompile Include="src\managers\SpriteManager.cpp" />
-    <ClCompile Include="src\scenes\GamePlay.cpp" />
     <ClCompile Include="src\scenes\MainMenu.cpp" />
     <ClCompile Include="src\utilities\MyTime.cpp" />
   </ItemGroup>
@@ -30,11 +28,9 @@
     <ClInclude Include="src\base\Scene.h" />
     <ClInclude Include="src\base\Singleton.h" />
     <ClInclude Include="src\entities\Car.h" />
-    <ClInclude Include="src\entities\Player.h" />
     <ClInclude Include="src\GameLoop.h" />
     <ClInclude Include="src\managers\SoundManager.h" />
     <ClInclude Include="src\managers\SpriteManager.h" />
-    <ClInclude Include="src\scenes\GamePlay.h" />
     <ClInclude Include="src\scenes\MainMenu.h" />
     <ClInclude Include="src\utilities\MyTime.h" />
   </ItemGroup>

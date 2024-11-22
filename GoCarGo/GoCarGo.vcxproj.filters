@@ -45,9 +45,6 @@
     <ClCompile Include="src\managers\SpriteManager.cpp">
       <Filter>managers</Filter>
     </ClCompile>
-    <ClCompile Include="src\scenes\GamePlay.cpp">
-      <Filter>scenes</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\GameLoop.h" />
@@ -76,8 +73,5 @@
       <Filter>managers</Filter>
     </ClInclude>
     <ClInclude Include="Button.h" />
-    <ClInclude Include="src\scenes\GamePlay.h">
-      <Filter>scenes</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
