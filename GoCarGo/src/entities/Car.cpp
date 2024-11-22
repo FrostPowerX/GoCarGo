@@ -95,5 +95,11 @@ namespace game
 
 
 
+	Vector2f Car::GetPosition()
+	{
+		return {sprite.getGlobalBounds().left, sprite.getGlobalBounds().top,};
+	}
+
+
 
 }
