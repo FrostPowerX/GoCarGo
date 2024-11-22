@@ -12,42 +12,45 @@
 using namespace std;
 using namespace sf;
 
-class GameLoop : public Singleton<GameLoop>
+namespace game
 {
-private:
+	class GameLoop : public Singleton<GameLoop>
+	{
+	private:
 
-	friend Singleton<GameLoop>; // Rompe todo el encapsulamiento xd
+		friend Singleton<GameLoop>; // Rompe todo el encapsulamiento xd
 
-	int width;
-	int height;
+		int width;
+		int height;
 
-	string title;
+		string title;
 
-	RenderWindow window;
+		RenderWindow window;
 
-	Scene* currentScene;
+		Scene* currentScene;
 
-	vector<Scene*> scenes;
+		vector<Scene*> scenes;
 
-	bool onLoop;
+		bool onLoop;
 
-	void Init();
+		void Init();
 
-	void Input();
-	void Update();
-	void Draw();
+		void Input();
+		void Update();
+		void Draw();
 
-	void DeInit();
+		void DeInit();
 
-	void AddScene(Scene* scene);
+		void AddScene(Scene* scene);
 
-public:
+	public:
 
-	GameLoop();
-	~GameLoop();
+		GameLoop();
+		~GameLoop();
 
-	void Play();
+		void Play();
 
-	void ChangeScene(int scene);
-};
+		void ChangeScene(int scene);
+	};
+}
 
