@@ -6,23 +6,26 @@
 
 using namespace std;
 
-class Scene
+namespace game
 {
-protected:
+	class Scene
+	{
+	protected:
 
-	vector<Entity*> allEntities;
+		vector<Entity*> allEntities;
 
-public:
+	public:
 
-	virtual ~Scene() = 0;
+		virtual ~Scene() = 0;
 
-	virtual void Init() = 0;
+		virtual void Init() = 0;
 
-	virtual void Input() = 0;
-	virtual void Update() = 0;
-	virtual void Draw() = 0;
+		virtual void Input() = 0;
+		virtual void Update() = 0;
+		virtual void Draw() = 0;
 
-	virtual void DeInit() = 0;
+		virtual void DeInit() = 0;
 
-};
+	};
+}
 
