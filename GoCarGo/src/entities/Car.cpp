@@ -88,6 +88,11 @@ namespace game
 			}
 		}
 	}
+	void Car::Update()
+	{
+		RemoveFuel(fuelConsumption * MyTime::Instance().GetdeltaTime());
+	}
+
 
 
 
