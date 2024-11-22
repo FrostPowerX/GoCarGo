@@ -18,7 +18,9 @@ namespace game
 		distance = 0;
 		this->fuel = fuel;
 
-		direction = Vector2f();
+		dirX = 0;
+		dirY = 0;
+
 		speed = 500;
 	}
 
@@ -29,31 +31,31 @@ namespace game
 
 		std::cout << "Input Car\n";
 
-		direction = { 0,0 };
+		dirX = 0;
+		dirY = 0;
 
 		if (Joystick::isConnected(0))
 		{
 			inputDir = Joystick::getAxisPosition(0, Joystick::PovX);
-			if (inputDir < FLT_EPSILON)
+			if (inputDir > FLT_EPSILON)
 			{
-				direction = { -1,0 };
+				dirX = 1;
 				//ChangeLane();
 			}
-			else if (inputDir > -FLT_EPSILON)
+			else if (inputDir < -FLT_EPSILON)
 			{
-				direction = { 1,0 };
+				dirX  = 1;
 			}
-
 			inputDir = Joystick::getAxisPosition(0, Joystick::PovY);
 			if (inputDir > FLT_EPSILON)
 			{
 				// AccelBackground()
-				direction = { 0,-1 };
+				dirY = -1;
 				RemoveFuel(fuelPenalty * MyTime::Instance().GetdeltaTime());
 			}
 			else if (inputDir < -FLT_EPSILON)
 			{
-				direction = { 0,1 };
+				dirY = 1;
 				// DeacccelBackground()
 			}
 
@@ -63,23 +65,23 @@ namespace game
 		{
 			if (Keyboard::isKeyPressed(Keyboard::A))
 			{
-				direction = { -1,0 };
+				dirX = 1;
 				//ChangeLane();
 			}
 			else if (Keyboard::isKeyPressed(Keyboard::D))
 			{
-				direction = { 1,0 };
+				dirX = 1;
 			}
 
 			else if (Keyboard::isKeyPressed(Keyboard::W))
 			{
 				// AccelBackground()
-				direction = { 0,-1 };
+				dirY = -1;
 				RemoveFuel(fuelPenalty * MyTime::Instance().GetdeltaTime());
 			}
 			else if (Keyboard::isKeyPressed(Keyboard::S))
 			{
-				direction = { 0,1 };
+				dirY = 1;
 				// DeacccelBackground()
 			}
 		}
@@ -178,7 +180,7 @@ namespace game
 	{
 		Joystick::update();
 
-		sprite.move(direction * MyTime::Instance().GetdeltaTime() * speed);
+		sprite.move(Vector2f{dirX, dirY} * MyTime::Instance().GetdeltaTime() * speed);
 		RemoveFuel(fuelConsumption * MyTime::Instance().GetdeltaTime());
 	}
 

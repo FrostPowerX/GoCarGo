@@ -18,7 +18,8 @@ namespace game
 
 		Power activePower;
 
-		Vector2f direction;
+		float dirX;
+		float dirY;
 
 		bool isLeftLane = true;
 
