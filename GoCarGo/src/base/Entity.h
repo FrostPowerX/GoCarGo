@@ -1,11 +1,10 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <string>
 
 #define GETTER_SETTER(type, field) inline type Get##field() { return (field);}; \
 				inline void Set##field(type Var) { (field) = Var;};
-
-#include <string>
 
 using namespace sf;
 
