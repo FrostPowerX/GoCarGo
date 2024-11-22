@@ -24,7 +24,7 @@ namespace game
 		virtual void Update();
 		virtual void Draw(RenderWindow& window);
 
-		virtual void DeInit() = 0;
+		virtual void DeInit();
 
 	};
 }

@@ -31,3 +31,13 @@ void game::Scene::Draw(RenderWindow& window)
 		entity->Draw(window);
 	}
 }
+
+void game::Scene::DeInit()
+{
+	for (auto entity : allEntities)
+	{
+		delete entity;
+	}
+
+	allEntities.clear();
+}
