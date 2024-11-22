@@ -12,27 +12,26 @@ namespace game
 
 	void GameLoop::Input()
 	{
-		//currentScene->Input();
+		currentScene->Input();
 	}
 
 	void GameLoop::Update()
 	{
-		//currentScene->Update();
-		cout << MyTime::Instance().GetdeltaTime();
+		currentScene->Update();
 	}
 
 	void GameLoop::Draw()
 	{
 		window.clear();
 
-		//currentScene->Draw();
+		currentScene->Draw();
 
 		window.display();
 	}
 
 	void GameLoop::DeInit()
 	{
-		//currentScene->DeInit();
+		currentScene->DeInit();
 	}
 
 	void GameLoop::AddScene(Scene* scene)
@@ -44,7 +43,8 @@ namespace game
 	{
 		if (index >= 0 && index < scenes.size())
 		{
-			currentScene->DeInit();
+			if (currentScene)
+				currentScene->DeInit();
 
 			currentScene = scenes[index];
 
@@ -61,7 +61,9 @@ namespace game
 
 		window.create(VideoMode(width, height), title);
 
-		currentScene = nullptr;
+		MainMenu* menu = new MainMenu();
+
+		currentScene = menu;
 
 		onLoop = true;
 	}
@@ -85,7 +87,7 @@ namespace game
 			if (Keyboard::isKeyPressed(Keyboard::Escape))
 				onLoop = false;
 
-			if (!currentScene)
+			if (currentScene)
 			{
 				MyTime::Instance().Start();
 

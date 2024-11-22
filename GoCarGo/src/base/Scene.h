@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "base/Entity.h"
+#include "Entity.h"
 
 using namespace std;
 
@@ -16,7 +16,7 @@ namespace game
 
 	public:
 
-		virtual ~Scene() = 0;
+		virtual ~Scene();
 
 		virtual void Init() = 0;
 
