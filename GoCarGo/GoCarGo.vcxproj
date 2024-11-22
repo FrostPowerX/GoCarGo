@@ -14,6 +14,7 @@
     <ClCompile Include="src\base\Scene.cpp" />
     <ClCompile Include="src\base\Entity.cpp" />
     <ClCompile Include="src\entities\Car.cpp" />
+    <ClCompile Include="src\entities\Button.cpp" />
     <ClCompile Include="src\GameLoop.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\managers\SoundManager.cpp" />
@@ -22,6 +23,7 @@
     <ClCompile Include="src\utilities\MyTime.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\entities\Button.h" />
     <ClInclude Include="src\base\Entity.h" />
     <ClInclude Include="src\base\Scene.h" />
     <ClInclude Include="src\base\Singleton.h" />
@@ -113,6 +115,9 @@
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
     <PostBuildEvent>
+      <Command>"$(SolutionDir)scripts\build.bat" "$(SolutionDir)" "$(TargetDir)" $(TargetName) SFML-2.5.1 "" 1</Command>
+      <Command>"$(SolutionDir)scripts\build.bat" "$(SolutionDir)" "$(TargetDir)" $(TargetName) SFML-2.5.1 "-d" 0</Command>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <Command>"$(SolutionDir)scripts\build.bat" "$(SolutionDir)" "$(TargetDir)" $(TargetName) SFML-2.5.1 "" 1</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
