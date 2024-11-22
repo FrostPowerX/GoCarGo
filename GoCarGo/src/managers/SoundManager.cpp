@@ -1,6 +1,6 @@
 #include "SoundManager.h"
 
-#include <vector>
+#include <iostream>
 
 namespace game 
 {
@@ -28,24 +28,18 @@ namespace game
 		musics.push_back(NewM);
 	}
 
-	SoundManager::SoundManager()
-	{
-		soundVolume = 1.f;
-		musicVolume = 0.5f;
-
-		currentMusic = nullptr;
-	}
-
 	SoundManager::~SoundManager()
 	{
 		for (int i = 0; i < sounds.size(); i++)
 		{
 			delete sounds[i];
+			std::cout << i << " Muricio Sound(SoundManager)!\n";
 		}
 
 		for (int i = 0; i < musics.size(); i++)
 		{
 			delete musics[i];
+			std::cout << i << " Muricio Music(SoundManager)!\n";
 		}
 	}
 
@@ -169,6 +163,11 @@ namespace game
 
 	void SoundManager::LoadSounds()
 	{
-		
+		soundVolume = 1.f;
+		musicVolume = 0.5f;
+
+		currentMusic = nullptr;
+
+
 	}
 }
