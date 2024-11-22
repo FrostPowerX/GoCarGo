@@ -20,7 +20,7 @@ public:
 
 	virtual void Input() = 0;
 	virtual void Update() = 0;
-	virtual void Draw();
+	virtual void Draw(RenderWindow& window);
 
 	virtual Vector2f GetPosition();
 	virtual Vector2f GetSize();

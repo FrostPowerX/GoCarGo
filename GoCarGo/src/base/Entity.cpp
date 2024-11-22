@@ -1,8 +1,8 @@
 #include "Entity.h"
 
-void Entity::Draw()
+void Entity::Draw(RenderWindow& window)
 {
-	// RenderWindow::draw(sprite);
+	window.draw(sprite);
 }
 
 Vector2f Entity::GetPosition()
