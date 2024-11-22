@@ -3,20 +3,15 @@
 
 namespace game
 {
-	enum class Power{None};
-
 	class Car : public Entity
 	{
 	private:
 		static const float maxFuel;
 		static const float fuelConsumption;
 
-
 		float speed;
 		float fuel;
 		float distance;
-
-		Power activePower;
 
 		float dirX;
 		float dirY;
@@ -34,13 +29,9 @@ namespace game
 
 	public:
 
-		Car(const std::string textureName, int frames, int frameIndex, float widthScale, float heightScale, float fuel);
+		Car(const std::string textureName, int frames, int frameIndex, float widthScale, float heightScale, float speed, float fuel);
 
-		//void Input(int joystick = 0);
 		void Input() override;
 		void Update() override;
-
-		GETTER_SETTER(Power, activePower);
-
 	};
 }
