@@ -3,6 +3,7 @@
 #include "base/Scene.h"
 
 #include "entities/Player.h"
+#include "entities/Obstacle.h"
 
 
 namespace game
@@ -11,9 +12,8 @@ namespace game
         public Scene
     {
     private:
-
         Player* player;
-
+        Obstacle* obstacle;
         bool isPause;
 
     public:

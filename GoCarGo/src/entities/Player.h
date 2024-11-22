@@ -10,6 +10,7 @@ namespace game
     private:
 
         String name;
+        bool isAlive = true;
 
     public:
 
@@ -17,7 +18,7 @@ namespace game
             float widthScale, float heightScale, float speed, float fuel);
 
         void Input() override;
-        void Update() override;
+        void Update(Entity* other) ;
         void Draw(RenderWindow& window) override;
 
     };

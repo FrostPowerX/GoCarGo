@@ -69,8 +69,18 @@ void game::Player::Input()
 	}
 }
 
-void game::Player::Update()
+void game::Player::Update(Entity* other)
 {
+	if (CheckCollision(other))
+	{
+		GetHit();
+	}
+
+	if (fuel <= 0) 
+	{
+		isAlive = false;
+	}
+
 	Car::Update();
 
 	Joystick::update();
@@ -78,5 +88,8 @@ void game::Player::Update()
 
 void game::Player::Draw(RenderWindow& window)
 {
-	Car::Draw(window);
+	if(isAlive)
+	{
+		Car::Draw(window);
+	}
 }

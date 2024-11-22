@@ -12,7 +12,11 @@ void game::GamePlay::Init()
 {
 	player = new Player("Carsito", "Cars", 5, 0, 1, 1, 100, 100);
 
+	obstacle = new Obstacle({ static_cast<float>(rand() % 801 + 1), 600.f }, "Cars", 5, 0, 1, 1, 200, 1000); //TODO REMOVE MAGIC
+
 	allEntities.push_back(player);
+
+	allEntities.push_back(obstacle);
 
 	isPause = false;
 }
@@ -55,7 +59,8 @@ void game::GamePlay::Draw(RenderWindow& window)
 		pos *= 0.5f;
 
 		text.setPosition(pos);
-
+		text.setFillColor(Color::White);
+		text.setPosition(300,300);
 		window.draw(text);
 	}
 }

@@ -1,4 +1,6 @@
 #include "Scene.h"
+#include <entities/Player.h>
+#include <entities/Obstacle.h>
 
 game::Scene::~Scene()
 {
@@ -20,6 +22,16 @@ void game::Scene::Update()
 {
 	for (auto entity : allEntities)
 	{
+		if (dynamic_cast<Player*>(entity))
+		{
+			for (auto obstacle : allEntities)
+			{
+				if (dynamic_cast<Obstacle*>(entity))
+				{
+					dynamic_cast<Player*>(entity)->Update(obstacle);
+				}
+			}
+		}
 		entity->Update();
 	}
 }

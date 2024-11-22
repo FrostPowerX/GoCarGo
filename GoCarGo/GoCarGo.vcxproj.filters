@@ -1,87 +1,99 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<ItemGroup>
-		<Filter Include="entities">
-			<UniqueIdentifier>{10db4ba7-1ccc-4c95-93e1-c34710f1d1fc}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="ui">
-			<UniqueIdentifier>{8b820f10-2cb8-4d59-ad90-065a937ccf25}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="scenes">
-			<UniqueIdentifier>{3c1759ab-a31b-448a-975a-bd624cff9ca4}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="managers">
-			<UniqueIdentifier>{ea5ea7c0-17e5-41c8-b91f-68234813e67c}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="base">
-			<UniqueIdentifier>{f9791280-17f8-4d45-a79e-1d42da505d94}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="utilities">
-			<UniqueIdentifier>{b44b8753-b7a2-41f0-9285-350b71b766bb}</UniqueIdentifier>
-		</Filter>
-	</ItemGroup>
-	<ItemGroup>
-		<ClCompile Include="src\GameLoop.cpp" />
-		<ClCompile Include="src\main.cpp" />
-		<ClCompile Include="src\entities\Car.cpp" />
-		<ClCompile Include="src\entities\Player.cpp">
-			<Filter>entities</Filter>
-		</ClCompile>
-		<ClCompile Include="src\base\Entity.cpp">
-			<Filter>base</Filter>
-		</ClCompile>
-		<ClCompile Include="src\scenes\MainMenu.cpp">
-			<Filter>scenes</Filter>
-		</ClCompile>
-		<ClCompile Include="src\scenes\GamePlay.cpp">
-			<Filter>scenes</Filter>
-		</ClCompile>
-		<ClCompile Include="Button.cpp" />
-		<ClCompile Include="src\utilities\MyTime.cpp">
-			<Filter>utilities</Filter>
-		</ClCompile>
-		<ClCompile Include="src\base\Scene.cpp">
-			<Filter>base</Filter>
-		</ClCompile>
-		<ClCompile Include="src\managers\SoundManager.cpp">
-			<Filter>managers</Filter>
-		</ClCompile>
-		<ClCompile Include="src\managers\SpriteManager.cpp">
-			<Filter>managers</Filter>
-		</ClCompile>
-	</ItemGroup>
-	<ItemGroup>
-		<ClInclude Include="src\GameLoop.h" />
-		<ClInclude Include="src\base\Entity.h">
-			<Filter>base</Filter>
-		</ClInclude>
-		<ClInclude Include="src\base\Singleton.h">
-			<Filter>base</Filter>
-		</ClInclude>
-		<ClInclude Include="src\entities\Car.h">
-			<Filter>entities</Filter>
-		</ClInclude>
-		<ClInclude Include="src\entities\Player.h">
-			<Filter>entities</Filter>
-		</ClInclude>
-		<ClInclude Include="src\scenes\MainMenu.h">
-			<Filter>scenes</Filter>
-		</ClInclude>
-		<ClInclude Include="src\scenes\GamePlay.h">
-			<Filter>scenes</Filter>
-		</ClInclude>
-		<ClInclude Include="src\utilities\MyTime.h">
-			<Filter>utilities</Filter>
-		</ClInclude>
-		<ClInclude Include="src\base\Scene.h">
-			<Filter>base</Filter>
-		</ClInclude>
-		<ClInclude Include="src\managers\SoundManager.h">
-			<Filter>managers</Filter>
-		</ClInclude>
-		<ClInclude Include="src\managers\SpriteManager.h">
-			<Filter>managers</Filter>
-		</ClInclude>
-		<ClInclude Include="Button.h" />
-	</ItemGroup>
+  <ItemGroup>
+    <Filter Include="entities">
+      <UniqueIdentifier>{10db4ba7-1ccc-4c95-93e1-c34710f1d1fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui">
+      <UniqueIdentifier>{8b820f10-2cb8-4d59-ad90-065a937ccf25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scenes">
+      <UniqueIdentifier>{3c1759ab-a31b-448a-975a-bd624cff9ca4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="managers">
+      <UniqueIdentifier>{ea5ea7c0-17e5-41c8-b91f-68234813e67c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{f9791280-17f8-4d45-a79e-1d42da505d94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utilities">
+      <UniqueIdentifier>{b44b8753-b7a2-41f0-9285-350b71b766bb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GameLoop.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\entities\Player.cpp">
+      <Filter>entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\Entity.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\MainMenu.cpp">
+      <Filter>scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\GamePlay.cpp">
+      <Filter>scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utilities\MyTime.cpp">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\Scene.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\managers\SoundManager.cpp">
+      <Filter>managers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\managers\SpriteManager.cpp">
+      <Filter>managers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\Button.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\Car.cpp">
+      <Filter>entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\Player.h">
+      <Filter>entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\Obstacle.cpp">
+      <Filter>entities</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\GameLoop.h" />
+    <ClInclude Include="src\base\Entity.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\Singleton.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entities\Car.h">
+      <Filter>entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\MainMenu.h">
+      <Filter>scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\GamePlay.h">
+      <Filter>scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utilities\MyTime.h">
+      <Filter>utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\Scene.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\managers\SoundManager.h">
+      <Filter>managers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\managers\SpriteManager.h">
+      <Filter>managers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entities\Button.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entities\Obstacle.h">
+      <Filter>entities</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
