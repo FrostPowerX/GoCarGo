@@ -5,7 +5,7 @@ namespace game
 {
 	class Car : public Entity
 	{
-	private:
+	protected:
 		static const float maxFuel;
 		static const float fuelConsumption;
 
@@ -29,9 +29,11 @@ namespace game
 
 	public:
 
-		Car(const std::string textureName, int frames, int frameIndex, float widthScale, float heightScale, float speed, float fuel);
+		Car(const std::string textureName, int frames, int frameIndex, 
+			float widthScale, float heightScale, float speed, float fuel);
 
-		void Input() override;
-		void Update() override;
+		virtual void Input() override;
+		virtual void Update() override;
+		virtual void Draw(RenderWindow& window) override;
 	};
 }

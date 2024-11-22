@@ -25,71 +25,18 @@ namespace game
 
 	void Car::Input()
 	{
-		const float deadZone = 10.f;
-		const float fuelPenalty = 0.5f;
-		float inputDir;
-
-		std::cout << "Input Car\n";
-
-		dirX = 0;
-		dirY = 0;
-
-		if (Joystick::isConnected(0))
-		{
-			inputDir = Joystick::getAxisPosition(0, Joystick::PovX);
-			if (inputDir > deadZone)
-			{
-				dirX = 1;
-			}
-			else if (inputDir < -deadZone)
-			{
-				dirX  = -1;
-			}
-			inputDir = Joystick::getAxisPosition(0, Joystick::PovY);
-			if (inputDir > deadZone)
-			{
-				// AccelBackground()
-				dirY = -1;
-				RemoveFuel(fuelPenalty * MyTime::Instance().GetdeltaTime());
-			}
-			else if (inputDir < -deadZone)
-			{
-				dirY = 1;
-				// DeacccelBackground()
-			}
-		}
-		else
-		{
-			if (Keyboard::isKeyPressed(Keyboard::A))
-			{
-				dirX = -1;
-				//ChangeLane();
-			}
-			else if (Keyboard::isKeyPressed(Keyboard::D))
-			{
-				dirX = 1;
-			}
-
-			if (Keyboard::isKeyPressed(Keyboard::W))
-			{
-				// AccelBackground()
-				dirY = -1;
-				RemoveFuel(fuelPenalty * MyTime::Instance().GetdeltaTime());
-			}
-			else if (Keyboard::isKeyPressed(Keyboard::S))
-			{
-				dirY = 1;
-				// DeacccelBackground()
-			}
-		}
+		
 	}
 
 	void Car::Update()
 	{
-		Joystick::update();
-
 		sprite.move(Vector2f{dirX, dirY} * MyTime::Instance().GetdeltaTime() * speed);
 		RemoveFuel(fuelConsumption * MyTime::Instance().GetdeltaTime());
+	}
+
+	void Car::Draw(RenderWindow& window)
+	{
+		Entity::Draw(window);
 	}
 
 	void Car::ChangeLane()
