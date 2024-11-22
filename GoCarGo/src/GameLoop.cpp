@@ -1,9 +1,17 @@
 #include "GameLoop.h"
 
+#include "utilities/MyTime.h"
+
+#include "managers/SpriteManager.h"
+#include "managers/SoundManager.h"
+
 namespace game
 {
 	void GameLoop::Init()
 	{
+		SoundManager::Instance().LoadSounds();
+		SpriteManager::Instance().LoadSprites();
+
 		if (currentScene)
 			currentScene->Init();
 	}
@@ -22,7 +30,7 @@ namespace game
 	{
 		window.clear();
 
-		currentScene->Draw();
+		currentScene->Draw(window);
 
 		window.display();
 	}
@@ -41,7 +49,8 @@ namespace game
 	{
 		if (index >= 0 && index < scenes.size())
 		{
-			currentScene->DeInit();
+			if (currentScene)
+				currentScene->DeInit();
 
 			currentScene = scenes[index];
 
@@ -58,7 +67,9 @@ namespace game
 
 		window.create(VideoMode(width, height), title);
 
-		currentScene = nullptr;
+		MainMenu* menu = new MainMenu();
+
+		currentScene = menu;
 
 		onLoop = true;
 	}
@@ -84,12 +95,23 @@ namespace game
 
 			if (currentScene)
 			{
+				MyTime::Instance().Start();
+
+				Event event;
+				while (window.pollEvent(event))
+				{
+					if (event.type == Event::Closed)
+						window.close();
+				}
+
 				Input();
 				Update();
 				Draw();
+
+				MyTime::Instance().Stop();
 			}
 			else
-				cout << "Error: Scene not seted or not exist.\n";
+				cout << "Error: Scene not setted or not exist.\n";
 		}
 
 		DeInit();

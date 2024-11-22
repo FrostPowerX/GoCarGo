@@ -24,15 +24,15 @@ namespace game
 
 		std::vector<SpriteBox*> spriteBoxes;
 
-		void LoadSprites();
-
 		void AddSprite(std::string name, std::string path);
 
 	public:
 
-		SpriteBox* GetSprite(std::string name);
-		
 		~SpriteManager();
+
+		void LoadSprites();
+
+		SpriteBox* GetSprite(std::string name);
 
 	};
 }

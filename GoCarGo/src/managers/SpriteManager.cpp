@@ -1,12 +1,14 @@
 #include "SpriteManager.h"
 
+#include <iostream>
+
 namespace game 
 {
 		void SpriteManager::AddSprite(std::string name, std::string path)
 		{
 			SpriteBox* newSpriteBox = new SpriteBox();
 			newSpriteBox->name = name;
-			newSpriteBox->texture.loadFromFile(name);
+			newSpriteBox->texture.loadFromFile(path);
 
 			spriteBoxes.push_back(newSpriteBox);
 		}
@@ -30,12 +32,18 @@ namespace game
 			for (int i = 0; i < spriteBoxes.size(); i++)
 			{
 				delete spriteBoxes[i];
+				std::cout << i << " Muricio(SpriteManager)!\n";
 			}
 		}
 
 		void SpriteManager::LoadSprites()
 		{
-			
-		}
+			AddSprite("Cars", "res/Cars.png");
+			AddSprite("FuelTank", "res/FuelTank.png");
+			AddSprite("GasCan", "res/GasCan.png");
+			AddSprite("Road", "res/Road.png");
+			AddSprite("Button", "res/ButtonPlay.png");
 
+			std::cout << "Se cargaron las texturas(SpriteManager)!\n";
+		}
 }

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <vector>
 #include <string>
 
 #include <SFML/Audio.hpp>
@@ -39,15 +40,14 @@ namespace game
 
 		Music* currentMusic;
 
-		void LoadSounds();
-
 		void AddSound(string name, string path, bool loop = false);
 		void AddMusic(string name, string path, bool loop = false);
 
 	public:
 
-		SoundManager();
 		~SoundManager();
+
+		void LoadSounds();
 
 		void Update();
 

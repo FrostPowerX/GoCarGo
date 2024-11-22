@@ -7,7 +7,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "scenes/Scene.h"
+#include "scenes/MainMenu.h"
 
 using namespace std;
 using namespace sf;
