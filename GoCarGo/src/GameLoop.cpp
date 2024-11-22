@@ -61,7 +61,9 @@ namespace game
 
 		window.create(VideoMode(width, height), title);
 
-		currentScene = nullptr;
+		MainMenu* menu = new MainMenu();
+
+		currentScene = menu;
 
 		onLoop = true;
 	}

@@ -16,6 +16,7 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\managers\SoundManager.cpp" />
     <ClCompile Include="src\managers\SpriteManager.cpp" />
+    <ClCompile Include="src\scenes\MainMenu.cpp" />
     <ClCompile Include="src\utilities\MyTime.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -25,7 +26,7 @@
     <ClInclude Include="src\GameLoop.h" />
     <ClInclude Include="src\managers\SoundManager.h" />
     <ClInclude Include="src\managers\SpriteManager.h" />
-    <ClInclude Include="src\scenes\Scene.h" />
+    <ClInclude Include="src\scenes\MainMenu.h" />
     <ClInclude Include="src\utilities\MyTime.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
