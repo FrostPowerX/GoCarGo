@@ -44,6 +44,7 @@ namespace game
 	{
 		fuel = (fuel + toAdd > maxFuel? fuel : fuel + toAdd);
 	}
+
 	void Car::RemoveFuel(float toRemove)
 	{
 		fuel = (fuel - toRemove < 0 ? 0 : fuel - toRemove);
@@ -88,28 +89,10 @@ namespace game
 			}
 		}
 	}
+
 	void Car::Update()
 	{
 		RemoveFuel(fuelConsumption * MyTime::Instance().GetdeltaTime());
 	}
-
-
-
-	Vector2f Car::GetPosition()
-	{
-		return {sprite.getGlobalBounds().left, sprite.getGlobalBounds().top};
-	}
-
-	Vector2f Car::GetSize()
-	{
-		return {sprite.getGlobalBounds().width, sprite.getGlobalBounds().height};
-	}
-
-	FloatRect Car::GetRect()
-	{
-		return sprite.getGlobalBounds();
-	}
-
-
 
 }

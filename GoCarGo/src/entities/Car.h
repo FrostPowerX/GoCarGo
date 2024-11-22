@@ -33,11 +33,6 @@ namespace game
 
 		void Input(int joystick = 0);
 		void Update() override;
-		void Draw() override;
-
-		Vector2f GetPosition() override;
-		Vector2f GetSize() override;
-		FloatRect GetRect() override;
 
 		GETTER_SETTER(Power, activePower);
 
