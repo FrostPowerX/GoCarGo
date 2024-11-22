@@ -24,7 +24,7 @@ public:
 
 	virtual Vector2f GetPosition() = 0;
 	virtual Vector2f GetSize() = 0;
-	virtual Rect<float>& GetRect() = 0;
+	virtual FloatRect GetRect() = 0;
 
 };
 

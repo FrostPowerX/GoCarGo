@@ -37,7 +37,7 @@ namespace game
 
 		Vector2f GetPosition() override;
 		Vector2f GetSize() override;
-		Rect<float>& GetRect() override;
+		FloatRect GetRect() override;
 
 		GETTER_SETTER(Power, activePower);
 

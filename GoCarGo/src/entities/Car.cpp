@@ -99,9 +99,15 @@ namespace game
 	{
 		return {sprite.getGlobalBounds().left, sprite.getGlobalBounds().top};
 	}
+
 	Vector2f Car::GetSize()
 	{
 		return {sprite.getGlobalBounds().width, sprite.getGlobalBounds().height};
+	}
+
+	FloatRect Car::GetRect()
+	{
+		return sprite.getGlobalBounds();
 	}
 
 
