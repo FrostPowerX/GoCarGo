@@ -6,7 +6,7 @@ using namespace sf;
 
 class Entity
 {
-
+protected:
 	Sprite sprite;
 
 public:
