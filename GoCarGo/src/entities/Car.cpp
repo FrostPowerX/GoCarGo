@@ -1,5 +1,7 @@
 ﻿#include "Car.h"
 
+#include "utilities/MyTime.h"
+
 
 
 namespace game
@@ -42,6 +44,45 @@ namespace game
 		fuel = (fuel + toAdd > maxFuel? fuel : fuel + toAdd);
 	}
 
+	void Car::Input(int joystick)
+	{
+		const float fuelPenalty = 0.5f;
+		float inputDir;
+
+		if (Joystick::isConnected(joystick))
+		{
+			inputDir = Joystick::getAxisPosition(joystick, Joystick::PovX);
+			if (inputDir < FLT_EPSILON && inputDir > -FLT_EPSILON)
+				ChangeLane();
+
+			inputDir = Joystick::getAxisPosition(joystick, Joystick::PovY);
+			if (inputDir > FLT_EPSILON)
+			{
+				// AccelBackground()
+				fuel -= fuelPenalty * MyTime::Instance().GetdeltaTime();
+			}
+			else if (inputDir < -FLT_EPSILON)
+			{
+				// DeacccelBackground()
+			}
+
+
+		}
+		else
+		{
+			if (Keyboard::isKeyPressed(Keyboard::A) || Keyboard::isKeyPressed(Keyboard::D))
+				ChangeLane();
+			else if (Keyboard::isKeyPressed(Keyboard::W))
+			{
+				// AccelBackground()
+				fuel -= fuelPenalty * MyTime::Instance().GetdeltaTime();
+			}
+			else if (Keyboard::isKeyPressed(Keyboard::S))
+			{
+				// DeacccelBackground()
+			}
+		}
+	}
 
 
 
