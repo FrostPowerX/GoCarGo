@@ -30,7 +30,7 @@ namespace game
 	{
 		window.clear();
 
-		currentScene->Draw();
+		currentScene->Draw(window);
 
 		window.display();
 	}
